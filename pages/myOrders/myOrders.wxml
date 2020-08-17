@@ -1,0 +1,32 @@
+<!--pages/myOrders/myOrders.wxml-->
+<view>
+	<view>
+		<van-field value="{{ dateTime }}" readonly>
+			<van-button plain slot="button" size="small" type="info" bind:click="changeDateTime" style="margin-right:10rpx;">更改时间</van-button>
+			<van-button plain slot="button" size="small" type="info" bind:click="selectByTime">查询</van-button>
+		</van-field>
+	</view>
+	<van-divider wx:if="{{imgList.length == 0}}" contentPosition="center">暂无数据</van-divider>
+	<view wx:else>
+		<view wx:for="{{imgList}}" wx:key="index">
+			<van-row>
+				<van-col span="24">
+					<van-image width="100%" height="275" src="{{item.img_url}}" />
+				</van-col>
+				<text>{{item.update_time}}</text>
+				<view>
+					<van-button plain size="small" type="danger" data-index="{{index}}" data-id="{{item.id}}" bind:click="deletePic" style="float:right;" size="small">删除</van-button>
+					<van-button plain size="small" type="info" bind:click="showBigImg" data-img="{{item.img_url}}" style="margin-right:10rpx;float:left;" size="small">大图</van-button>
+					<!-- <van-button data-imgurl="{{item.img_urlLocal}}" data-imgid="{{item.id}}" plain size="small" type="info" open-type="share">分享给朋友签名</van-button> -->
+					<button size="mini" data-imgurl="{{item.img_urlLocal}}" data-imgid="{{item.id}}" plain type="primary" open-type="share">分享给朋友签名</button>
+				</view>
+			</van-row>
+			<van-divider />
+		</view>
+	</view>
+	<van-divider wx:if="{{noMore}}" contentPosition="center">没有更多数据啦~</van-divider>
+	<!-- 时间选择 -->
+	<van-popup show="{{isShowDatetime}}" position="bottom">
+		<van-datetime-picker type="date" value="{{ currentDate }}" formatter="{{ formatter }}" bind:confirm="confirmFn" bind:cancel="cancelFn" />
+	</van-popup>
+</view>

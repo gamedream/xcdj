@@ -1,0 +1,21 @@
+/* pages/enterStorageTP/enterStorageTP.wxss */
+.main{
+  /* background-color: #f7f8fa; */
+}
+.title{
+  padding: 20rpx;
+}
+.footer{
+  /* margin-top: 50rpx; */
+  background-color: #ffffff;
+  z-index: 2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center;     /* 垂直居中 */
+}
+.block{
+  height: 100rpx;
+}

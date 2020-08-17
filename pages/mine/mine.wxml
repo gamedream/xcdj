@@ -1,0 +1,17 @@
+<!--pages/mine/mine.wxml-->
+<view class="">
+	<view class="header">
+		<view wx:if="{{userInfo.avatarUrl}}">
+			<image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+			<text class="userinfo-nickname">{{userInfo.nickName}}</text>
+		</view>
+		<button wx:else class="loginBtn" bindgetuserinfo="getUserInfo" open-type="getUserInfo" type='primary' size="mini">请先登录</button>
+	</view>
+	<van-cell-group>
+		<van-cell title="我的入库单" is-link link-type="navigateTo" url="/pages/myOrders/myOrders?type=0" />
+		<van-cell title="我的送货单" is-link link-type="navigateTo" url="/pages/myOrders/myOrders?type=1" />
+		<van-cell title="我的进仓单" is-link link-type="navigateTo" url="/pages/myOrders/myOrders?type=2" />
+		<van-cell title="我的销售单" is-link link-type="navigateTo" url="/pages/myOrders/myOrders?type=3" />
+	</van-cell-group>
+
+</view>

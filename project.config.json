@@ -1,0 +1,141 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": false,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": false,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.12.0",
+	"appid": "wx0bab676f949c3a76",
+	"projectname": "signOderMini",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "签名页",
+					"pathName": "pages/signPage/signPage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "入库单填写页",
+					"pathName": "pages/joinStorageTP/joinStorageTP",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "入库单别人点击进来签名页面",
+					"pathName": "pages/joinStorageSign/joinStorageSign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "送货单签名页",
+					"pathName": "pages/sendSign/sendSign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "填写进仓单",
+					"pathName": "pages/enterStorageTP/enterStorageTP",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "进货单签名",
+					"pathName": "pages/enterStorageSign/enterStorageSign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "销售单填单",
+					"pathName": "pages/sellTP/sellTP",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "销售单签名页",
+					"pathName": "pages/sellSign/sellSign",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心页",
+					"pathName": "pages/mine/mine",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/myOrders/myOrders",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

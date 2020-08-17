@@ -1,0 +1,15 @@
+<!--pages/enterStorageSign/enterStorageSign.wxml-->
+<view>
+	<van-image width="100%" height="275" src="{{orderSrcLocal}}" />
+	<van-button size="small" type="default" bind:click="showBigImg">预览大图</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="master">部门主管签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="accountant">会计签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="chargeUp">记账签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="keep">保管签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="acceptance">验收签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="bestowal">缴仓签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="make">制单签名</van-button>
+	<van-button size="small" type="info" bind:click="update">提交</van-button>
+	<!-- canvas 的直接隐藏目前不可用 display：none 。这里设置position:fixed;left:9000px;可以让画布滚出屏幕外 达到不让用户查看的效果 -->
+	<canvas canvas-id="templateCanvas" style="width:960px;height:708px;position:fixed;left:9000px;"></canvas>
+</view>

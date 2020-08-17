@@ -1,0 +1,57 @@
+<!--pages/sendTP/sendTP.wxml-->
+<!--pages/joinStorageTP/joinStorageTP.wxml-->
+<view class="main">
+	<view>
+		<!-- 图片展示 -->
+		<view wx:if="{{isShowImg}}">
+			<van-image width="100%" height="275" src="{{imgSrc}}"/>
+			<van-button size="small" type="default" bind:click="showBigImg">预览大图</van-button>
+			<van-button disabled="{{!uploadTime}}" size="small" type="default" bind:click="uploadToCenter">上传</van-button>
+
+			<!-- 分享功能等能上线再测试 -->
+			<van-button disabled="{{!uploadAlready}}" style="float:right;" size="small" open-type="share" type="default">发送给朋友签名</van-button>
+		</view>
+		<!-- 折叠面板 -->
+		<van-collapse value="{{ activeNames }}" bind:change="onChangeCollapse">
+			<!-- 表头 -->
+			<van-collapse-item title="表头" name="1">
+				<van-cell-group>
+					<van-field maxlength="20" clearable label="NO" value="{{ NO }}" placeholder="请输入NO(最大长度20)" bind:change="changeNO" type="number" />
+					<van-field maxlength="28" clearable label="地址" value="{{ address }}" placeholder="请输入地址(最大长度28)" bind:change="changeAddress" />
+					<van-field maxlength="11" clearable label="电话" value="{{ phone }}" placeholder="请输入电话(最大长度11)" bind:change="changePhone" type="number"/>
+          <van-field maxlength="28" clearable label="客户" value="{{ customer }}" placeholder="请输入客户(最大长度28)" bind:change="changeCustomer" />
+          <van-field label="时间" value="{{ dateTime }}" readonly>
+						<van-button slot="button" size="small" type="info" bind:click="changeDateTime">更改</van-button>
+					</van-field>
+				</van-cell-group>
+			</van-collapse-item>
+
+			<!-- 表内容 -->
+			<van-collapse-item title="表内容" name="2">
+				<!-- 这里要用遍历 -->
+				<van-cell-group wx:for="{{rowsList}}" wx:key="index" title="第{{item.rowNumber}}条">
+					<van-field maxlength="30" clearable label="品名及规格" value="{{ item.nameAndSize }}" placeholder="请输入品名及规格(最大长度30)" bind:change="changeNameAndSize" data-index="{{index}}" />
+					<van-field maxlength="8" clearable label="数量" value="{{ item.goodCount }}" placeholder="请输入数量(最大长度8)" bind:change="changeGoodCount" type="number" data-index="{{index}}" />
+					<van-field maxlength="8" clearable label="单价" value="{{ item.goodMoney }}" placeholder="请输入单价(最大长度8)" bind:change="changeGoodMoney" type="digit" data-index="{{index}}" />
+					<van-field readonly label="金额" value="{{ item.goodTotal }}" type="digit" data-index="{{index}}">
+						<van-button slot="button" size="small" type="info" bind:click="countFn" data-index="{{index}}">计算</van-button>
+					</van-field>
+				</van-cell-group>
+			</van-collapse-item>
+		</van-collapse>
+		<!-- 时间选择 -->
+		<van-popup show="{{isShowDatetime}}" position="bottom">
+			<van-datetime-picker type="date" value="{{ currentDate }}" formatter="{{ formatter }}" bind:confirm="confirmFn" bind:cancel="cancelFn" />
+		</van-popup>
+		<!-- 底部按钮 -->
+		<view class="footer">
+			<view class="buttonBox">
+				<van-button type="primary" bind:click="createOrder">生成订单</van-button>
+				<van-button type="info" style="margin-left:50rpx" bind:click="goTop">回到顶部</van-button>
+			</view>
+		</view>
+		<!-- canvas 的直接隐藏目前不可用 display：none 。这里设置position:fixed;left:9000px;可以让画布滚出屏幕外 达到不让用户查看的效果 -->
+		<canvas canvas-id="templateCanvas" style="width:967px;height:677px;position:fixed;left:9000px;"></canvas>
+	</view>
+	<view class="block"></view>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/joinStorageSign/joinStorageSign.wxml-->
+<view>
+  <van-image width="100%" height="275" src="{{orderSrcLocal}}"/>
+  <van-button size="small" type="default" bind:click="showBigImg">预览大图</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="master">主管签名</van-button>
+	<van-button size="small" type="default" bind:click="signFn" data-role="handler">经手人签名</van-button>
+  <van-button size="small" type="info" bind:click="update">提交</van-button>
+  <!-- canvas 的直接隐藏目前不可用 display：none 。这里设置position:fixed;left:9000px;可以让画布滚出屏幕外 达到不让用户查看的效果 -->
+	<canvas canvas-id="templateCanvas" style="width:967px;height:677px;position:fixed;left:9000px;"></canvas>
+</view>
